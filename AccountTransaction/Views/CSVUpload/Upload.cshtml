@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload using CSV/XLSX file</h2>
+@using (Html.BeginForm("Upload", "CSVUpload", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class=" control-group">
+        <h4>File Upload</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("File name")
+            <div class="col-md-8">
+                <input type="file" name="uploadFile" id="fileID" data-val="true" data-val-required="File is required" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" id="upload" value="FileUpload" class="btn btn-primary" disabled />
+        </div>
+    </div>
+    <div>
+        <ul>
+
+            <li>Uploaded: @ViewBag.output</li>"
+
+        </ul>
+    </div>
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $("#fileID").change(function () {
+            var selectedText = $("#fileID").val().replace(/C:\\fakepath\\/i, '');
+            var extension = selectedText.split('.');
+            if (extension[1] != "csv") {
+                $("#fileID").val("");
+                $("#uploadFile").focus();
+                alert("Please choose a .csv or .xlsx file");
+                $('#upload').attr('disabled', true);
+                return;
+            }
+            else
+            {
+                $('#upload').attr('disabled', false);
+               
+            }
+
+        });
+    </script>
+}

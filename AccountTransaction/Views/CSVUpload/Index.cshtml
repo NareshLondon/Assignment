@@ -1,0 +1,16 @@
+﻿@model AccountTransaction.Models.taxDataModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Uploaded Data:</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal"></dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

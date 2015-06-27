@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">Upload CSV or XLXS file to database</p>
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Notes</h2>
+        <p>
+            I used SQLBulkCopy to upload large file into database, and it is simple and easy tool to transfer complicated or simple data from one data source to other
+            sources.
+            I would really have done this assignment by implementing generic repository to achieve DI and singleton, open/closed etc. 
+        </p>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Assumption:</h2>
+        <p>
+            I have assumed that any csv or xlsx file to be uploaded, is in valid format for this assignment. Yes, there are still more to do to refine the layout and some validations.
+            Due to the time boxed assignment, I really stopped further refactoring further code and design.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Instructions:</h2>
+        <p>
+            Please create a database with supplied script inside the solution. I thought to use EF but this time boxed assignment put me in different approach.
+            I have created a csv file with 100K records, placed inside the solution. I have uploaded this no. of times and which is imported in fastest manner.
+        </p>
+    </div>
+</div>
